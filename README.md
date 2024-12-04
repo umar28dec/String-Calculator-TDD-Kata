@@ -1,5 +1,7 @@
 # String Calculator
 
+A simple string calculator implementation with support for various features like handling custom delimiters, ignoring numbers greater than 1000, and throwing exceptions for negative numbers.
+
 ## Overview
 
 Create a simple String calculator with a method signature:
@@ -34,7 +36,7 @@ For an empty string, it will return `0`.
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/umar28dec/String-Calculator-TDD-Kata.git
+   git clone https://github.com/umar28dec/String-Calculator-TDD-Kata
    cd string-calculator
    ```
 
@@ -63,8 +65,6 @@ yarn test
 To view the test coverage report:
 
 Above command will create a coverage folder. Open the index.html file inside the coverage directory in your browser to see a detailed report.
-
----
 
 ### Features
 
