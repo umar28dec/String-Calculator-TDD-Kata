@@ -11,13 +11,22 @@ export class StringCalculator {
 
     if (numbers.startsWith("//")) {
       const parts = numbers.split("\n");
-      const customDelimiter = parts[0].slice(2);
-      delimiter = new RegExp(
-        customDelimiter.replace(/[-\/\\^$*+?.()|[\]{}]/g, "\\$&")
-      );
+      const delimiterMatch = parts[0].match(/^\/\/\[(.+)\]$/);
+
+      if (delimiterMatch) {
+        const customDelimiter = delimiterMatch[1];
+        delimiter = new RegExp(
+          customDelimiter.replace(/[-\/\\^$*+?.()|[\]{}]/g, "\\$&")
+        );
+      } else {
+        delimiter = new RegExp(
+          parts[0].slice(2).replace(/[-\/\\^$*+?.()|[\]{}]/g, "\\$&")
+        );
+      }
+
       numberPart = parts[1];
     }
-
+    console.log(delimiter);
     const numberArray = numberPart.split(delimiter).map((num) => parseInt(num));
     const negatives = numberArray.filter((num) => num < 0);
     if (negatives.length > 0) {
