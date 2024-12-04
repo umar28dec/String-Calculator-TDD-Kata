@@ -26,4 +26,12 @@ describe("StringCalculator", () => {
   it('should return 16 for input "11,5"', () => {
     expect(calculator.add("11,5")).toBe(16);
   });
+
+  it('should handle large inputs like "1,1,1,1,1,1,1,1,1,1"', () => {
+    expect(calculator.add("1,1,1,1,1,1,1,1,1,1")).toBe(10);
+  });
+
+  it('should return 125451445545 for input "125451445545"', () => {
+    expect(calculator.add("125451445545")).toBe(125451445545);
+  });
 });
