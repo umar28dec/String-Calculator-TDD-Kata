@@ -46,4 +46,24 @@ describe("StringCalculator", () => {
   it('should return 15 for input "5\n5\n5"', () => {
     expect(calculator.add("5\n5\n5")).toBe(15);
   });
+
+  it('should return 3 for input "//;\n1;2"', () => {
+    expect(calculator.add("//;\n1;2")).toBe(3);
+  });
+
+  it('should return 15 for input "//|\n5|5|5"', () => {
+    expect(calculator.add("//|\n5|5|5")).toBe(15);
+  });
+
+  it('should return 10 for input "//#\n4#3#3"', () => {
+    expect(calculator.add("//#\n4#3#3")).toBe(10);
+  });
+
+  it('should return 0 for empty input ""', () => {
+    expect(calculator.add("")).toBe(0);
+  });
+
+  it('should return 6 for input "1,2,3"', () => {
+    expect(calculator.add("1,2,3")).toBe(6);
+  });
 });
