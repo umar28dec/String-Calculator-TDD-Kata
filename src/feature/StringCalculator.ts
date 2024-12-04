@@ -17,11 +17,15 @@ export class StringCalculator {
       );
       numberPart = parts[1];
     }
-    const numberArray = numberPart.split(delimiter);
-    for (let i = 0; i < numberArray.length; i++) {
-      sum += parseInt(numberArray[i]);
-    }
 
+    const numberArray = numberPart.split(delimiter).map((num) => parseInt(num));
+    const negatives = numberArray.filter((num) => num < 0);
+    if (negatives.length > 0) {
+      throw new Error(`Negatives not allowed: ${negatives.join(", ")}`);
+    }
+    for (let i = 0; i < numberArray.length; i++) {
+      sum += numberArray[i];
+    }
     return sum;
   }
 }

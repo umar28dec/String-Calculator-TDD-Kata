@@ -66,4 +66,23 @@ describe("StringCalculator", () => {
   it('should return 6 for input "1,2,3"', () => {
     expect(calculator.add("1,2,3")).toBe(6);
   });
+  it("should throw an exception for a single negative number", () => {
+    expect(() => calculator.add("1,-2,3")).toThrowError(
+      "Negatives not allowed: -2"
+    );
+  });
+
+  it("should throw an exception for multiple negative numbers", () => {
+    expect(() => calculator.add("1,-2,-3,4")).toThrowError(
+      "Negatives not allowed: -2, -3"
+    );
+  });
+
+  it('should return 6 for input "1,2,3" without negatives', () => {
+    expect(calculator.add("1,2,3")).toBe(6);
+  });
+
+  it('should return 0 for empty input ""', () => {
+    expect(calculator.add("")).toBe(0);
+  });
 });
