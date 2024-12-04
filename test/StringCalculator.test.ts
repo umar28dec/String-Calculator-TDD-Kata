@@ -18,4 +18,12 @@ describe("StringCalculator", () => {
   it('should return 8 for input "8"', () => {
     expect(calculator.add("8")).toBe(8);
   });
+
+  it('should return 8 for input "3,5"', () => {
+    expect(calculator.add("3,5")).toBe(8);
+  });
+
+  it('should return 16 for input "11,5"', () => {
+    expect(calculator.add("11,5")).toBe(16);
+  });
 });
