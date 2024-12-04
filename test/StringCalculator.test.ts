@@ -111,4 +111,26 @@ describe("StringCalculator", () => {
   it("should ignore numbers greater than 1000", () => {
     expect(calculator.add("//[***]\n1***1001***2")).toBe(3);
   });
+
+  it("should handle multiple delimiters", () => {
+    expect(calculator.add("//[*][%]\n1*2%3")).toBe(6);
+  });
+
+  it("should handle multiple delimiters of varying lengths", () => {
+    expect(calculator.add("//[***][%%]\n1***2%%3")).toBe(6);
+  });
+
+  it("should ignore numbers greater than 1000", () => {
+    expect(calculator.add("//[*][%]\n1*2%1001")).toBe(3);
+  });
+
+  it("should throw an exception for negative numbers", () => {
+    expect(() => calculator.add("//[*][%]\n1*2%-3")).toThrowError(
+      "Negatives not allowed: -3"
+    );
+  });
+
+  it("should handle single-character custom delimiters", () => {
+    expect(calculator.add("//;\n1;2;3")).toBe(6);
+  });
 });
