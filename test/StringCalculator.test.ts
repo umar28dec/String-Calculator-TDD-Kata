@@ -15,7 +15,7 @@ describe("StringCalculator", () => {
     expect(calculator.add("1")).toBe(1);
   });
 
-  it('should return 8 for input "81"', () => {
+  it('should return 8 for input "8"', () => {
     expect(calculator.add("8")).toBe(8);
   });
 });
