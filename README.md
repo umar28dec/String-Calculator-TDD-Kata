@@ -21,14 +21,6 @@ For an empty string, it will return `0`.
 
 ---
 
-# String Calculator
-
-## Overview
-
-A simple string calculator implementation with support for various features like handling custom delimiters, ignoring numbers greater than 1000, and throwing exceptions for negative numbers.
-
----
-
 ## How to Run
 
 ### Prerequisites
@@ -71,6 +63,8 @@ yarn test
 To view the test coverage report:
 
 Above command will create a coverage folder. Open the index.html file inside the coverage directory in your browser to see a detailed report.
+
+---
 
 ### Features
 
