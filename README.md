@@ -36,7 +36,7 @@ For an empty string, it will return `0`.
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/umar28dec/String-Calculator-TDD-Kata
+   git clone https://github.com/umar28dec/String-Calculator-TDD-Kata.git
    cd string-calculator
    ```
 
