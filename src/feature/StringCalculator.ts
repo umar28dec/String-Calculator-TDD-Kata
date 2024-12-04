@@ -24,7 +24,9 @@ export class StringCalculator {
       throw new Error(`Negatives not allowed: ${negatives.join(", ")}`);
     }
     for (let i = 0; i < numberArray.length; i++) {
-      sum += numberArray[i];
+      if (numberArray[i] <= 1000) {
+        sum += numberArray[i];
+      }
     }
     return sum;
   }

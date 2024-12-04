@@ -31,8 +31,8 @@ describe("StringCalculator", () => {
     expect(calculator.add("1,1,1,1,1,1,1,1,1,1")).toBe(10);
   });
 
-  it('should return 125451445545 for input "125451445545"', () => {
-    expect(calculator.add("125451445545")).toBe(125451445545);
+  it('should return 0 for input "125451445545"', () => {
+    expect(calculator.add("125451445545")).toBe(0);
   });
 
   it('should return 6 for input "1\n2,3"', () => {
@@ -84,5 +84,23 @@ describe("StringCalculator", () => {
 
   it('should return 0 for empty input ""', () => {
     expect(calculator.add("")).toBe(0);
+  });
+
+  it("should ignore numbers greater than 1000", () => {
+    expect(calculator.add("2,1001")).toBe(2);
+  });
+
+  it("should return the sum of numbers less than or equal to 1000", () => {
+    expect(calculator.add("2,1000,500")).toBe(1502);
+  });
+
+  it("should throw an exception for negative numbers", () => {
+    expect(() => calculator.add("2,-3,1001")).toThrowError(
+      "Negatives not allowed: -3"
+    );
+  });
+
+  it("should handle custom delimiters and ignore numbers greater than 1000", () => {
+    expect(calculator.add("//;\n2;1001;500")).toBe(502);
   });
 });
